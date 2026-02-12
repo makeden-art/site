@@ -203,7 +203,7 @@ const products = [
         price: 2450,
         unit: 'м²',
         specs: 'Толщина: 14мм | Класс: 32 | Порода: Дуб',
-        image: 'Паркетная продукция/natural touch.png',
+        image: 'img/products/natural-touch.png',
         badge: 'Хит продаж'
     },
     {
@@ -213,7 +213,7 @@ const products = [
         price: 2850,
         unit: 'м²',
         specs: 'Толщина: 15мм | Класс: 33 | Порода: Ясень',
-        image: 'Паркетная продукция/dark wood.png',
+        image: 'img/products/dark-wood.png',
         badge: 'Новинка'
     },
     {
@@ -223,7 +223,7 @@ const products = [
         price: 3200,
         unit: 'м²',
         specs: 'Толщина: 16мм | Класс: 33 | Порода: Орех',
-        image: 'Паркетная продукция/grey shadow.png',
+        image: 'img/products/grey-shadow.png',
         badge: null
     },
     {
@@ -233,7 +233,7 @@ const products = [
         price: 2200,
         unit: 'м²',
         specs: 'Толщина: 14мм | Класс: 32 | Порода: Бук',
-        image: 'Паркетная продукция/white brithe.png',
+        image: 'img/products/white-brithe.png',
         badge: 'Акция'
     },
     {
@@ -243,7 +243,7 @@ const products = [
         price: 2950,
         unit: 'м²',
         specs: 'Толщина: 15мм | Класс: 33 | Порода: Дуб',
-        image: 'Паркетная продукция/disaigner solution.png',
+        image: 'img/products/designer-solution.png',
         badge: null
     },
     {
@@ -253,7 +253,7 @@ const products = [
         price: 3500,
         unit: 'м²',
         specs: 'Толщина: 16мм | Класс: 34 | Порода: Орех',
-        image: 'Паркетная продукция/american.png',
+        image: 'img/products/american.png',
         badge: 'Премиум'
     },
     {
@@ -263,7 +263,7 @@ const products = [
         price: 2600,
         unit: 'м²',
         specs: 'Толщина: 14мм | Класс: 32 | Порода: Ясень',
-        image: 'Паркетная продукция/white brithe.png',
+        image: 'img/products/white-brithe.png',
         badge: null
     },
     {
@@ -273,7 +273,7 @@ const products = [
         price: 2750,
         unit: 'м²',
         specs: 'Толщина: 15мм | Класс: 33 | Порода: Дуб',
-        image: 'Паркетная продукция/grey shadow.png',
+        image: 'img/products/grey-shadow.png',
         badge: null
     }
 ];
