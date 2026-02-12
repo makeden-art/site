@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coswickvrn — натуральный паркет высочайшего качества</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <svg class="logo-svg" viewBox="0 0 240 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="woodGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#9AABBA;stop-opacity:1" />
+                                    <stop offset="30%" style="stop-color:#7A8B9A;stop-opacity:1" />
+                                    <stop offset="70%" style="stop-color:#5A6B7A;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#7A8B9A;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="woodGradientDark" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#7A8B9A;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#5A6B7A;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#7A8B9A;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#7A8B9A;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#5A6B7A;stop-opacity:1" />
+                                </linearGradient>
+                                <pattern id="woodGrain" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+                                    <path d="M0,2 Q2,1 4,2" stroke="#5A6B7A" stroke-width="0.3" fill="none" opacity="0.3"/>
+                                    <path d="M0,3 Q2,2.5 4,3" stroke="#5A6B7A" stroke-width="0.2" fill="none" opacity="0.2"/>
+                                </pattern>
+                            </defs>
+                            <!-- Parquet board icon - showing the board structure -->
+                            <g class="logo-icon">
+                                <!-- Main board -->
+                                <rect x="2" y="10" width="36" height="30" fill="url(#woodGradient)" rx="2" stroke="#5A6B7A" stroke-width="0.5"/>
+                                <!-- Wood grain texture -->
+                                <rect x="2" y="10" width="36" height="30" fill="url(#woodGrain)" rx="2" opacity="0.4"/>
+                                <!-- Board planks/layers (showing structure) -->
+                                <line x1="2" y1="20" x2="38" y2="20" stroke="#5A6B7A" stroke-width="0.8" opacity="0.5"/>
+                                <line x1="2" y1="30" x2="38" y2="30" stroke="#5A6B7A" stroke-width="0.8" opacity="0.5"/>
+                                <!-- Wood grain lines (vertical) -->
+                                <path d="M8,10 Q10,15 8,20 Q6,25 8,30 Q10,35 8,40" stroke="#5A6B7A" stroke-width="0.5" fill="none" opacity="0.4"/>
+                                <path d="M15,10 Q17,15 15,20 Q13,25 15,30 Q17,35 15,40" stroke="#5A6B7A" stroke-width="0.5" fill="none" opacity="0.4"/>
+                                <path d="M22,10 Q24,15 22,20 Q20,25 22,30 Q24,35 22,40" stroke="#5A6B7A" stroke-width="0.5" fill="none" opacity="0.4"/>
+                                <path d="M29,10 Q31,15 29,20 Q27,25 29,30 Q31,35 29,40" stroke="#5A6B7A" stroke-width="0.5" fill="none" opacity="0.4"/>
+                                <path d="M36,10 Q38,15 36,20 Q34,25 36,30 Q38,35 36,40" stroke="#5A6B7A" stroke-width="0.5" fill="none" opacity="0.4"/>
+                                <!-- Locking system (tongue and groove) -->
+                                <rect x="38" y="18" width="2" height="14" fill="url(#woodGradientDark)" rx="0.5"/>
+                                <!-- Board thickness indicator -->
+                                <rect x="0" y="10" width="2" height="30" fill="#5A6B7A" opacity="0.6" rx="1"/>
+                            </g>
+                            <!-- Text with gradient -->
+                            <text x="48" y="32" font-family="'Inter', -apple-system, sans-serif" font-size="22" font-weight="700" fill="url(#textGradient)" letter-spacing="2px">
+                                COSWICK
+                            </text>
+                            <text x="48" y="42" font-family="'Inter', -apple-system, sans-serif" font-size="14" font-weight="600" fill="#5A6B7A" letter-spacing="3px">
+                                VRN
+                            </text>
+                        </svg>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#catalog" class="nav-link">Каталог</a>
+                            <ul class="dropdown">
+                                <li><a href="#natural">Натуральная палитра</a></li>
+                                <li><a href="#grey">Оттенки серого</a></li>
+                                <li><a href="#white">Белые ночи</a></li>
+                                <li><a href="#dark">Таинственный лес</a></li>
+                                <li><a href="#designer">Дизайнерские решения</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="#shop" class="nav-link">Магазин</a></li>
+                        <li class="nav-item"><a href="#portfolio" class="nav-link">Портфолио</a></li>
+                        <li class="nav-item"><a href="#news" class="nav-link">Новости</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">О компании</a></li>
+                        <li class="nav-item"><a href="#contacts" class="nav-link">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#shop" class="shop-link">Магазин</a>
+                    <button class="cart-btn" id="cartBtn">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="lang-switch">EN</button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('обложки/глав 1.png');">
+        <div class="hero-content">
+            <h1 class="hero-title">Индивидуальность в каждом шаге</h1>
+            <p class="hero-subtitle">Откройте мир натурального паркета</p>
+            <p class="hero-description">Надежность и долговечность</p>
+            <a href="#catalog" class="btn btn-primary">Смотреть каталог</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="catalog" class="collections">
+        <div class="container">
+            <h2 class="section-title">Паркетная продукция</h2>
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="Паркетная продукция/natural touch.png" alt="Натуральная палитра" class="collection-img">
+                    </div>
+                    <div class="collection-info">
+                        <h3 class="collection-name">Натуральная палитра</h3>
+                        <p class="collection-description">Natural Touch collection</p>
+                        <a href="#" class="collection-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="Паркетная продукция/dark wood.png" alt="Таинственный лес" class="collection-img">
+                    </div>
+                    <div class="collection-info">
+                        <h3 class="collection-name">Таинственный лес</h3>
+                        <p class="collection-description">Dark Wood collection</p>
+                        <a href="#" class="collection-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="Паркетная продукция/grey shadow.png" alt="Оттенки серого" class="collection-img">
+                    </div>
+                    <div class="collection-info">
+                        <h3 class="collection-name">Оттенки серого</h3>
+                        <p class="collection-description">Grey Shadow collection</p>
+                        <a href="#" class="collection-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="Паркетная продукция/white brithe.png" alt="Белые ночи" class="collection-img">
+                    </div>
+                    <div class="collection-info">
+                        <h3 class="collection-name">Белые ночи</h3>
+                        <p class="collection-description">White Breathe collection</p>
+                        <a href="#" class="collection-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="Паркетная продукция/disaigner solution.png" alt="Дизайнерские решения" class="collection-img">
+                    </div>
+                    <div class="collection-info">
+                        <h3 class="collection-name">Дизайнерские решения</h3>
+                        <p class="collection-description">Designer Solution collection</p>
+                        <a href="#" class="collection-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="Паркетная продукция/american.png" alt="Американский орех" class="collection-img">
+                    </div>
+                    <div class="collection-info">
+                        <h3 class="collection-name">Американский орех</h3>
+                        <p class="collection-description">American Walnut collection</p>
+                        <a href="#" class="collection-link">Подробнее →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mosaic Section -->
+    <section class="mosaic-section">
+        <div class="container">
+            <h2 class="section-title">Мозаичный паркет</h2>
+            <p class="section-subtitle">Мозаичный паркет, который добавляет уют и стиль.</p>
+            <div class="mosaic-grid">
+                <div class="mosaic-card">
+                    <div class="mosaic-pattern">
+                        <img src="мозаичный паркет/Англ елка.png" alt="Английская елка" class="mosaic-img">
+                    </div>
+                    <h3>Английская елка</h3>
+                </div>
+                <div class="mosaic-card">
+                    <div class="mosaic-pattern">
+                        <img src="мозаичный паркет/Франц елка.png" alt="Французская елка" class="mosaic-img">
+                    </div>
+                    <h3>Французская елка</h3>
+                </div>
+                <div class="mosaic-card">
+                    <div class="mosaic-pattern">
+                        <img src="мозаичный паркет/Модуль.png" alt="Модульный паркет" class="mosaic-img">
+                    </div>
+                    <h3>Модульный паркет</h3>
+                </div>
+                <div class="mosaic-card">
+                    <div class="mosaic-pattern">
+                        <img src="мозаичный паркет/Паркетри.png" alt="Паркетри" class="mosaic-img">
+                    </div>
+                    <h3>Паркетри</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Паркет в интерьере: Реализованные проекты</h2>
+            <p class="section-subtitle">Мы гордимся созданием уникальных и стильных пространств для наших клиентов.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="интерьер/luxury-authentic-dining-room-interior-design 1.png" alt="Современная гостиная" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Современная гостиная</h3>
+                        <p>Натуральная палитра</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="интерьер/modern-kitchen-design-interior 1.png" alt="Минималистичный офис" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Современная кухня</h3>
+                        <p>Таинственный лес</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="интерьер/modern-styled-entryway 1.png" alt="Светлая спальня" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Современная прихожая</h3>
+                        <p>Белые ночи</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="интерьер/view-contemporary-photorealistic-lamp 1.png" alt="Скандинавский стиль" class="portfolio-img">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3>Современный интерьер</h3>
+                        <p>Оттенки серого</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#" class="btn btn-secondary">Больше вдохновляющих работ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Создаем паркет с душой и заботой о природе</h2>
+                    <p>Мы используем только натуральные материалы, чтобы наши полы были экологичными и безопасными.</p>
+                </div>
+                <div class="about-image">
+                    <img src="интерьер/изображение 3.png" alt="О компании" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources">
+        <div class="container">
+            <h2 class="section-title">Полезные ресурсы для профессионалов</h2>
+            <p class="section-subtitle">Мы собрали в одном разделе полезные материалы, а также информацию для наших дилеров.</p>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Техническая информация</h3>
+                    <p>Каталоги, сертификаты, характеристики</p>
+                    <a href="#" class="resource-link">Подробнее →</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Дизайнерам и Архитекторам</h3>
+                    <p>Специальные предложения и материалы</p>
+                    <a href="#" class="resource-link">Подробнее →</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Дилерам</h3>
+                    <p>Условия сотрудничества и поддержка</p>
+                    <a href="#" class="resource-link">Подробнее →</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Референс-лист</h3>
+                    <p>Наши реализованные проекты</p>
+                    <a href="#" class="resource-link">Подробнее →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop">
+        <div class="container">
+            <h2 class="section-title">Магазин паркета</h2>
+            <p class="section-subtitle">Выберите паркетную доску из нашего каталога</p>
+            
+            <div class="shop-filters">
+                <button class="filter-btn active" data-filter="all">Все товары</button>
+                <button class="filter-btn" data-filter="natural">Натуральная палитра</button>
+                <button class="filter-btn" data-filter="dark">Таинственный лес</button>
+                <button class="filter-btn" data-filter="grey">Оттенки серого</button>
+                <button class="filter-btn" data-filter="white">Белые ночи</button>
+            </div>
+
+            <div class="shop-grid" id="shopGrid">
+                <!-- Products will be added by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Корзина</h2>
+                <button class="cart-close" id="cartClose">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="cart-empty">Корзина пуста</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Итого:</span>
+                    <span class="cart-total-price" id="cartTotal">0 ₽</span>
+                </div>
+                <button class="btn btn-primary cart-checkout">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <h2 class="section-title">Будь в курсе событий</h2>
+            <div class="news-tabs">
+                <button class="tab-btn active" data-tab="news">Новости</button>
+                <button class="tab-btn" data-tab="press">Пресса</button>
+                <button class="tab-btn" data-tab="events">События</button>
+            </div>
+            <div class="news-content">
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="обложки/глав 1.png" alt="Новая коллекция 2026" class="news-img">
+                        </div>
+                        <div class="news-body">
+                            <span class="news-date">09 января 2026</span>
+                            <h3 class="news-title">Новая коллекция 2026: вдохновляющие идеи паркетного дизайна</h3>
+                            <p class="news-excerpt">Представляем календарь 2026 года с идеями, которые вдохновляют нас на создание новых дизайнов паркета</p>
+                            <a href="#" class="news-link">Подробнее →</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="обложки/2b158128-cc51-42e9-ad54-a09dca455abd 1.png" alt="Открытие нового флагманского салона" class="news-img">
+                        </div>
+                        <div class="news-body">
+                            <span class="news-date">15 декабря 2025</span>
+                            <h3 class="news-title">Открытие нового флагманского салона</h3>
+                            <p class="news-excerpt">Мы рады сообщить об открытии нового флагманского салона в сердце столицы</p>
+                            <a href="#" class="news-link">Подробнее →</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="обложки/2b158128-cc51-42e9-ad54-a09dca455abd 3.png" alt="Участие в выставке" class="news-img">
+                        </div>
+                        <div class="news-body">
+                            <span class="news-date">01 декабря 2025</span>
+                            <h3 class="news-title">Участие в выставке «Русский Дом»</h3>
+                            <p class="news-excerpt">Компания представила четыре уникальные капсульные коллекции на выставке интерьерных решений</p>
+                            <a href="#" class="news-link">Подробнее →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacts" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Коллекции</h3>
+                    <ul>
+                        <li><a href="#">Натуральная палитра</a></li>
+                        <li><a href="#">Оттенки серого</a></li>
+                        <li><a href="#">Белые ночи</a></li>
+                        <li><a href="#">Таинственный лес</a></li>
+                        <li><a href="#">Дизайнерские решения</a></li>
+                        <li><a href="#">Американский орех</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="#catalog">Где купить?</a></li>
+                        <li><a href="#">Статус заказа</a></li>
+                        <li><a href="#">Работа в компании</a></li>
+                        <li><a href="#">Карта сайта</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>г. Москва, ул. Примерная, д. 1</p>
+                    <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+                    <p>Телефон: <a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Подписка</h3>
+                    <p>Подпишитесь на новости и получите специальные предложения</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-primary">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 coswickvrn. Все права защищены.</p>
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское Соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
