@@ -195,7 +195,20 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Shop and Cart Functionality
-const products = [
+// Безопасность: URL и ключ можно задать через data-атрибуты на теге <script> или через window (не коммить секреты в git).
+// Пример в HTML: <script src="script.js" data-products-api-url="https://..." data-products-api-key="твой-секрет"></script>
+(function() {
+    var s = document.currentScript;
+    window.__PRODUCTS_API_URL = (s && s.getAttribute('data-products-api-url')) || window.__PRODUCTS_API_URL || '';
+    window.__PRODUCTS_API_KEY = (s && s.getAttribute('data-products-api-key')) || window.__PRODUCTS_API_KEY || '';
+    window.__PRODUCTS_JSON_URL = (s && s.getAttribute('data-products-json-url')) || window.__PRODUCTS_JSON_URL || '';
+})();
+const PRODUCTS_API_URL = window.__PRODUCTS_API_URL || '';
+const PRODUCTS_API_KEY = window.__PRODUCTS_API_KEY || '';
+// Статичный JSON из Git (n8n пушит сюда) — приоритет над API, n8n в интернет не нужен
+const PRODUCTS_JSON_URL = window.__PRODUCTS_JSON_URL || 'products.json';
+
+let products = [
     {
         id: 1,
         name: 'Паркетная доска Дуб Натуральный',
@@ -281,11 +294,64 @@ const products = [
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let currentFilter = 'all';
 
+// Путь из БД (/data/files/images/...) → путь на сайте (img/products/...). Картинки без файла не скрывают товар.
+var IMAGE_PATH_PREFIX = 'img/products'; // куда мапятся пути из базы
+var IMAGE_FALLBACK = 'img/products/natural-touch.jpg';
+
+function normalizeImagePath(raw) {
+    if (!raw) return IMAGE_FALLBACK;
+    var path = String(raw).replace(/\\/g, '/').trim();
+    if (!path) return IMAGE_FALLBACK;
+    // /data/files/images/COSWICK/1171-4805-30.jpg → img/products/COSWICK/1171-4805-30.jpg
+    if (path.indexOf('/data/files/images') === 0)
+        path = IMAGE_PATH_PREFIX + path.slice('/data/files/images'.length);
+    return path;
+}
+
+// Привести товар из API к формату сайта. Товар всегда показываем (название, поля, цена); без картинки — заглушка.
+function mapProductFromApi(item) {
+    var meta = item.metadata || {};
+    return {
+        id: Number(item.id) || item.id || (item.sku || '').replace(/\s/g, '_'),
+        name: item.name || item.title || item.nazvanie || meta.decor || item.format_type || item.sku || item.collection || '',
+        category: (item.category || item.category_id || meta.palette || 'natural').toString().toLowerCase().replace(/\s+/g, '_'),
+        price: Number(item.rrp_rub_m2) || Number(item.price) || 0,
+        unit: item.unit || 'м²',
+        specs: item.specs || item.description || item.specifications || [item.size, item.model, meta.finish, meta.wood_species].filter(Boolean).join(' · ') || '',
+        image: normalizeImagePath(item.image_path || item.image_local || item.image || item.image_url || item.photo || meta.image_url_800 || meta.image_url_350),
+        badge: item.badge || item.label || null
+    };
+}
+
+// Загрузить товары: 1) из API (если задан PRODUCTS_API_URL), 2) иначе из products.json (n8n пушит в Git)
+function loadProductsFromAPI() {
+    var url = (PRODUCTS_API_URL && PRODUCTS_API_URL.trim()) ? PRODUCTS_API_URL : PRODUCTS_JSON_URL;
+    var useApi = !!(PRODUCTS_API_URL && PRODUCTS_API_URL.trim());
+    const shopGrid = document.getElementById('shopGrid');
+    if (shopGrid) shopGrid.innerHTML = '<p class="shop-loading">Загрузка товаров...</p>';
+
+    var headers = {};
+    if (useApi && PRODUCTS_API_KEY) headers['X-API-Key'] = PRODUCTS_API_KEY;
+    fetch(url, { method: 'GET', headers: headers })
+        .then(function(res) { return res.ok ? res.json() : Promise.reject(res.status); })
+        .then(function(data) {
+            var list = Array.isArray(data) ? data : (data.products || data.items || data.data || []);
+            if (list.length) products = list.map(mapProductFromApi);
+            renderProducts();
+            updateCartCount();
+            renderCart();
+        })
+        .catch(function() {
+            if (shopGrid) shopGrid.innerHTML = '';
+            renderProducts();
+            updateCartCount();
+            renderCart();
+        });
+}
+
 // Initialize Shop
 function initShop() {
-    renderProducts();
-    updateCartCount();
-    renderCart();
+    loadProductsFromAPI();
 }
 
 // Render Products
@@ -300,20 +366,20 @@ function renderProducts(filter = 'all') {
     shopGrid.innerHTML = filteredProducts.map(product => `
         <div class="product-card" data-product-id="${product.id}">
             <div class="product-image">
-                <img src="${product.image}" alt="${product.name}" loading="lazy">
+                <img src="${product.image}" alt="${product.name}" loading="lazy" data-fallback="${IMAGE_FALLBACK}" onerror="this.onerror=null;this.src=this.dataset.fallback||'${IMAGE_FALLBACK}'">
                 ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
             </div>
             <div class="product-info">
                 <div class="product-category">${getCategoryName(product.category)}</div>
                 <h3 class="product-name">${product.name}</h3>
-                <p class="product-specs">${product.specs}</p>
+                ${product.specs ? `<p class="product-specs">${product.specs}</p>` : ''}
                 <div class="product-price">
                     <span class="product-price-value">${product.price.toLocaleString()} ₽</span>
                     <span class="product-price-unit">/ ${product.unit}</span>
                 </div>
                 <div class="product-actions">
-                    <button class="btn-add-cart" onclick="addToCart(${product.id})">В корзину</button>
-                    <button class="btn-view" onclick="viewProduct(${product.id})">Подробнее</button>
+                    <button class="btn-add-cart" onclick="addToCart(${JSON.stringify(product.id)})">В корзину</button>
+                    <button class="btn-view" onclick="viewProduct(${JSON.stringify(product.id)})">Подробнее</button>
                 </div>
             </div>
         </div>

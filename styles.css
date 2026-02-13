@@ -1305,6 +1305,13 @@ html {
     margin-top: 2rem;
 }
 
+.shop-loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-light);
+    padding: 3rem;
+}
+
 /* Responsive shop grid */
 @media (max-width: 640px) {
     .shop-grid {
