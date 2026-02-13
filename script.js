@@ -203,7 +203,7 @@ const products = [
         price: 2450,
         unit: 'м²',
         specs: 'Толщина: 14мм | Класс: 32 | Порода: Дуб',
-        image: '/img/products/natural-touch.jpg',
+        image: 'img/products/natural-touch.jpg',
         badge: 'Хит продаж'
     },
     {
@@ -213,7 +213,7 @@ const products = [
         price: 2850,
         unit: 'м²',
         specs: 'Толщина: 15мм | Класс: 33 | Порода: Ясень',
-        image: '/img/products/dark-wood.jpg',
+        image: 'img/products/dark-wood.jpg',
         badge: 'Новинка'
     },
     {
@@ -223,7 +223,7 @@ const products = [
         price: 3200,
         unit: 'м²',
         specs: 'Толщина: 16мм | Класс: 33 | Порода: Орех',
-        image: '/img/products/grey-shadow.jpg',
+        image: 'img/products/grey-shadow.jpg',
         badge: null
     },
     {
@@ -233,7 +233,7 @@ const products = [
         price: 2200,
         unit: 'м²',
         specs: 'Толщина: 14мм | Класс: 32 | Порода: Бук',
-        image: '/img/products/white-brithe.jpg',
+        image: 'img/products/white-brithe.jpg',
         badge: 'Акция'
     },
     {
@@ -243,7 +243,7 @@ const products = [
         price: 2950,
         unit: 'м²',
         specs: 'Толщина: 15мм | Класс: 33 | Порода: Дуб',
-        image: '/img/products/designer-solution.jpg',
+        image: 'img/products/designer-solution.jpg',
         badge: null
     },
     {
@@ -253,7 +253,7 @@ const products = [
         price: 3500,
         unit: 'м²',
         specs: 'Толщина: 16мм | Класс: 34 | Порода: Орех',
-        image: '/img/products/american.jpg',
+        image: 'img/products/american.jpg',
         badge: 'Премиум'
     },
     {
@@ -263,7 +263,7 @@ const products = [
         price: 2600,
         unit: 'м²',
         specs: 'Толщина: 14мм | Класс: 32 | Порода: Ясень',
-        image: '/img/products/white-brithe.jpg',
+        image: 'img/products/white-brithe.jpg',
         badge: null
     },
     {
@@ -273,7 +273,7 @@ const products = [
         price: 2750,
         unit: 'м²',
         specs: 'Толщина: 15мм | Класс: 33 | Порода: Дуб',
-        image: '/img/products/grey-shadow.jpg',
+        image: 'img/products/grey-shadow.jpg',
         badge: null
     }
 ];
